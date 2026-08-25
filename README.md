@@ -1,33 +1,34 @@
 # Dmitri Tsjornoi
 
-**IT Integration Engineer — Tallinn, Estonia**
+Integration engineer. I build the machinery that decides whether a language model's output is allowed to reach production.
 
-Over 6 years at a leading global logistics provider, building and maintaining the EDI and API integration systems that move high volumes of business data across global supply chains. Most of my time goes into the part that is actually hard: turning ambiguous business requirements into something that runs reliably in production and keeps running when the data does not cooperate.
+## What I build
 
-## Harness engineering
+**Agent harnesses.** The interesting part of an LLM system is not the prompt. It is everything around it: what context the model is allowed to see, which tools it can call, what checks its output, and when it is permitted to stop. Right now that is a mapping-automation pipeline that generates XSLT transformations and refuses to put any of them in front of a reviewer until they pass a golden-pair correctness oracle. The model writes the code. The harness decides whether that code ships.
 
-Over the past year I moved from experimenting with AI to shipping it. The work is best described as harness engineering: building the scaffolding around a language model that decides what context it sees, which tools it can call, how its output is verified, and when it is allowed to stop. The model writes the code. The harness decides whether that code ships.
+**MCP servers.** Custom servers for GitLab, Jira and internal knowledge systems, and one that drives live WordPress and Elementor sites over a bridge plugin. Designing tools for an agent is API design for a consumer that will not read your documentation and will not ask you a question when it gets confused — so the schema, the error messages and the defaults have to carry all of it.
 
-In practice this is an AI-assisted mapping automation pipeline. It takes a logical mapping specification and produces a generated XSLT transformation that has to pass a golden-pair correctness oracle before a human reviews anything, then moves through the delivery workflow the team already uses — Jira, Git, MR-based approval. Around that pipeline I have built custom MCP servers for GitLab, Jira and internal knowledge systems, a VS Code extension on the Language Model API with a deterministic one-shot path and a separate agentic loop, and the observability needed to see which one is failing and why.
+**Integration systems.** EDI and API pipelines moving high volumes of business data across global supply chains: EDIFACT, ANSI X12, XML/XSLT/XSD, AS2, SFTP. This is the domain that taught me to care about verification. A wrong transformation is not a failing test, it is a wrong invoice.
 
-My interest is deliberately narrow: agentic architectures applied to enterprise integration, where correctness is machine-checkable and a wrong transformation has a real cost attached to it.
+**Developer tooling.** A VS Code extension on the Language Model API with two execution paths — a deterministic one-shot and a separate agentic loop — plus the observability needed to tell which of them failed, and why.
 
-## Skills and technologies
+## Things I believe about this work
 
-- **EDI systems** — design, deployment and management
-- **Interface data formats** — JSON, XML/XSLT/XSD, EDIFACT, ANSI X12
-- **Communication protocols** — SFTP, AS2, HTTPS, REST APIs
-- **Scripting & DB** — UNIX/Python scripts, SQL
-- **Agent harness engineering** — verification loops, context management, tool interfaces, custom MCP servers, VS Code LM API
-- **Agent frameworks** — LangChain (Deep Agents), CrewAI, AutoGen
-- **Web & app development** — TypeScript, React, Python, Rust
-- **Quality & performance** — XSLT unit testing, golden-pair validation, SonarQube
-- **Observability** — Elasticsearch, Kibana, Grafana, Langfuse
+- Correctness has to be machine-checkable, or the agent is just producing confident text.
+- Context is a budget. Most agent failures are retrieval and scope failures wearing a reasoning costume.
+- A verification loop nobody can read is not verification.
 
-## Outside the day job
+## Stack
 
-Through [websculpt.ee](https://websculpt.ee) I build and run websites and online stores for small businesses — WordPress and WooCommerce development, migrations between hosts without downtime, DNS, Cloudflare and certificates, and the automation that removes the weekly manual work. Custom React and NestJS applications when an off-the-shelf plugin is not the answer. Also Arduino and small hardware projects, purely for fun.
+- **Languages** — TypeScript, Python, Rust, PHP, Bash, SQL, XSLT
+- **Agents & AI** — MCP, VS Code LM API, LangChain (Deep Agents), CrewAI, AutoGen, Langfuse
+- **Integration** — EDIFACT, ANSI X12, XML/XSD, REST, AS2, SFTP
+- **Web** — React, NestJS, Node.js, WordPress, WooCommerce
+- **Infrastructure** — Linux, nginx, MySQL, Cloudflare, Plesk, AWS, GitHub Actions
+- **Quality & observability** — golden-pair validation, XSLT unit testing, SonarQube, Elasticsearch, Kibana, Grafana
 
----
+## Elsewhere
 
-Always open to connecting with engineers working at the intersection of systems integration and AI automation.
+Freelance web and automation work through [websculpt.ee](https://websculpt.ee). Arduino and small hardware projects when I want a problem that fails visibly.
+
+Based in Tallinn. Always up for a conversation with engineers working where systems integration meets AI automation.
