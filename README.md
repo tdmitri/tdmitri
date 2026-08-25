@@ -1,28 +1,33 @@
 # Dmitri Tsjornoi
 
-IT Integration Engineer based in Tallinn, Estonia. I build websites and online stores and run the infrastructure behind them, through [websculpt.ee](https://websculpt.ee).
+**IT Integration Engineer — Tallinn, Estonia**
 
-## What I do
+Over 6 years at a leading global logistics provider, building and maintaining the EDI and API integration systems that move high volumes of business data across global supply chains. Most of my time goes into the part that is actually hard: turning ambiguous business requirements into something that runs reliably in production and keeps running when the data does not cooperate.
 
-My work sits between development and operations: building a site or a shop, moving an existing one to better hosting without downtime, and keeping DNS, mail and certificates working afterwards. When something in a business is done by hand every week, it usually ends up automated.
+## Harness engineering
 
-## What I can help with
+Over the past year I moved from experimenting with AI to shipping it. The work is best described as harness engineering: building the scaffolding around a language model that decides what context it sees, which tools it can call, how its output is verified, and when it is allowed to stop. The model writes the code. The harness decides whether that code ships.
 
-- **WordPress & WooCommerce** — custom builds, Elementor sites, product catalogues, payment and shipping setup
-- **Migrations** — moving sites and mailboxes between hosts, with a rollback plan and minimal downtime
-- **DNS, Cloudflare & certificates** — zone setup, SSL, caching and WAF rules that don't break checkout
-- **Performance & repairs** — slow pages, caching problems, broken integrations, things that stopped working after an update
-- **Automation & integrations** — connecting APIs, internal tools, bots, scheduled jobs and reporting
-- **Custom applications** — React and NestJS when an off-the-shelf plugin is not the answer
+In practice this is an AI-assisted mapping automation pipeline. It takes a logical mapping specification and produces a generated XSLT transformation that has to pass a golden-pair correctness oracle before a human reviews anything, then moves through the delivery workflow the team already uses — Jira, Git, MR-based approval. Around that pipeline I have built custom MCP servers for GitLab, Jira and internal knowledge systems, a VS Code extension on the Language Model API with a deterministic one-shot path and a separate agentic loop, and the observability needed to see which one is failing and why.
 
-## Tech
+My interest is deliberately narrow: agentic architectures applied to enterprise integration, where correctness is machine-checkable and a wrong transformation has a real cost attached to it.
 
-- **Web** — TypeScript, React, NestJS, Node.js, PHP, WordPress, WooCommerce, Elementor
-- **Infrastructure** — Plesk, Cloudflare, nginx, MySQL, Let's Encrypt, Postfix/Dovecot, AWS S3
-- **Automation** — Python, Bash, REST APIs, n8n, GitHub Actions
+## Skills and technologies
 
-Outside of client work: Arduino and small hardware projects.
+- **EDI systems** — design, deployment and management
+- **Interface data formats** — JSON, XML/XSLT/XSD, EDIFACT, ANSI X12
+- **Communication protocols** — SFTP, AS2, HTTPS, REST APIs
+- **Scripting & DB** — UNIX/Python scripts, SQL
+- **Agent harness engineering** — verification loops, context management, tool interfaces, custom MCP servers, VS Code LM API
+- **Agent frameworks** — LangChain (Deep Agents), CrewAI, AutoGen
+- **Web & app development** — TypeScript, React, Python, Rust
+- **Quality & performance** — XSLT unit testing, golden-pair validation, SonarQube
+- **Observability** — Elasticsearch, Kibana, Grafana, Langfuse
 
-## Get in touch
+## Outside the day job
 
-Project enquiries go through **[websculpt.ee](https://websculpt.ee)**.
+Through [websculpt.ee](https://websculpt.ee) I build and run websites and online stores for small businesses — WordPress and WooCommerce development, migrations between hosts without downtime, DNS, Cloudflare and certificates, and the automation that removes the weekly manual work. Custom React and NestJS applications when an off-the-shelf plugin is not the answer. Also Arduino and small hardware projects, purely for fun.
+
+---
+
+Always open to connecting with engineers working at the intersection of systems integration and AI automation.
